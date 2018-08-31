@@ -10,9 +10,9 @@ This project is a part of [Full Stack Web Developer Nanodegree Program](https://
 
 ## Server Specifications
 
-* The public IP adddress : 13.232.245.195
+* The public IP adddress : 13.232.169.122
 * The SSH port : 2200
-* The URL for the webpage : [http://ec2-13-232-245-195.ap-south-1.compute.amazonaws.com/](http://ec2-13-232-245-195.ap-south-1.compute.amazonaws.com/)
+* The URL for the webpage : [ec2-13-232-169-122.ap-south-1.compute.amazonaws.com](ec2-13-232-169-122.ap-south-1.compute.amazonaws.com)
 * User : grader
 * User Password : udacity
 
@@ -336,9 +336,9 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
   * Add the following lines of code to the file to configure the virtual host.
     ```cmd
     <VirtualHost *:80>
-    ServerName 13.232.245.195
-    ServerAlias ec2-35-167-27-204.us-west-2.compute.amazonaws.com
-    ServerAdmin admin@13.232.245.195
+    ServerName 13.232.169.122
+    ServerAlias ec2-13-232-169-122.ap-south-1.compute.amazonaws.com
+    ServerAdmin admin@13.232.169.122
     WSGIDaemonProcess catalog  python-home=/var/www/catalog/catalog/venv
     WSGIProcessGroup catalog
     WSGIScriptAlias / /var/www/catalog/catalog.wsgi
