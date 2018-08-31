@@ -13,6 +13,8 @@ This project is a part of [Full Stack Web Developer Nanodegree Program](https://
 * The public IP adddress : 13.232.245.195
 * The SSH port : 2200
 * The URL for the webpage : [http://ec2-13-232-245-195.ap-south-1.compute.amazonaws.com/](http://ec2-13-232-245-195.ap-south-1.compute.amazonaws.com/)
+* User : grader
+* User Password : udacity
 
 ## Configuration Details
 
@@ -48,11 +50,9 @@ Now change port from 22 to 2200 and save the file.
 ```cmd
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
-sudo ufw allow ssh
 sudo ufw allow 2200/tcp
 sudo ufw allow www
-sudo ufw allow ntp
-sudo ufw deny 22
+sudo ufw allow 123/udp
 sudo ufw enable
 sudo ufw status
 sudo service ssh restart
@@ -118,6 +118,12 @@ The user can use PuTTY  Key Generator for it.
     sudo nano /etc/ssh/sshd_config
     ```
     Change PasswordAuthentication to 'no' from 'yes' and save the file.
+
+* User cannot log in as root remotely
+    ```cmd
+    sudo nano /etc/ssh/sshd_config
+    ```
+    Change PermitRootLogin to 'no' from 'without-password'
 
 * Restart service
     ```cmd
@@ -216,21 +222,6 @@ sudo apt-get install postgresql
     \q
     ```
 
-* Update files for database setup (switch from SQLite to PostgreSQL)
-    ```cmd
-    engine = create_engine('postgresql://catalog:PASSWORD_FOR_DATABASE@localhost/catalog')
-    ```
-  The changes should be made in following files:
-  * ```__init__.py```
-  * database_setup.py
-  * ```lotsofmenu.py```
-
-* Populate the catalog database with the data
-    ```cmd
-    python database_setup.py
-    python lotsofmenu.py
-    ```
-
 ### 12. Install git
 
 ```cmd
@@ -258,7 +249,7 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
 
 * Change name of file the ```application.py``` to ```__init__.py```.
     ```cmd
-    mv application.py __init__.py
+    sudo mv application.py __init__.py
     ```
 
 * In file ```__init__.py``` change following line.
@@ -279,6 +270,20 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
   * Update client ID into login.html template file.
   * Update ```__init__.py``` file with the full path for client_secrets.json file as, /var/www/catalog/catalog/client_secrets.json
 
+* Update files for database setup (switch from SQLite to PostgreSQL)
+    ```cmd
+    engine = create_engine('postgresql://catalog:PASSWORD_FOR_DATABASE@localhost/catalog')
+    ```
+  The changes should be made in following files:
+  * ```__init__.py```
+  * database_setup.py
+  * ```lotsofmenu.py```
+
+* Populate the catalog database with the data
+    ```cmd
+    python database_setup.py
+    python lotsofmenu.py
+    ```
 * Setup virtual environment and its dependencies
 
     Setting up a virtual environment will keep the application and its dependencies isolated from the main system. Changes to it will not affect the cloud server's system configurations.
@@ -291,7 +296,7 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
     ```cmd
     sudo pip install virtualenv
     ```
-  * Change to the itemCatalogApplication directory.
+  * Change to the catalog directory.
   * Give name to the virtual environment
     ```cmd
     sudo virtualenv venv
@@ -302,7 +307,7 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
     ```
   * Change permissions
     ```cmd
-    sudo chmod -R 777 virenv
+    sudo chmod -R 777 venv
     ```
   * Install required dependencies
     ```cmd
