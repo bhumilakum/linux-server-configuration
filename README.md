@@ -409,3 +409,4 @@ sudo git clone https://github.com/bhumilakum/Item-Catalog-Application catalog
 * [https://manjaro.site/how-to-connect-to-amazon-lightsail-from-windows/](https://manjaro.site/how-to-connect-to-amazon-lightsail-from-windows/)
 * [https://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html](https://modwsgi.readthedocs.io/en/develop/user-guides/virtual-environments.html)
 * [http://www.hcidata.info/host2ip.cgi](http://www.hcidata.info/host2ip.cgi)
+* [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
