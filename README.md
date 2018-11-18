@@ -12,7 +12,7 @@ This project is a part of [Full Stack Web Developer Nanodegree Program](https://
 
 * The public IP adddress : 13.232.169.122
 * The SSH port : 2200
-* The URL for the webpage : [ec2-13-232-169-122.ap-south-1.compute.amazonaws.com](http://ec2-13-232-169-122.ap-south-1.compute.amazonaws.com/)
+* The URL for the webpage : [http://ec2-13-232-169-122.ap-south-1.compute.amazonaws.com/](http://ec2-13-232-169-122.ap-south-1.compute.amazonaws.com/)
 * User : grader
 * User Password : udacity
 
